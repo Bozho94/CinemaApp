@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CinemaApp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class CinemaAppDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public CinemaAppDbContext(DbContextOptions<CinemaAppDbContext> options)
             : base(options)
         {
         }
