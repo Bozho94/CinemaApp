@@ -12,12 +12,12 @@ namespace CinemaApp
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("CinemaAppDbConnection") ?? throw new InvalidOperationException("Connection string 'CinemaAppDbConnection' not found.");
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<CinemaAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<CinemaAppDbContext>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
