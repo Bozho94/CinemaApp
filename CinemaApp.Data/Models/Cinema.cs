@@ -29,11 +29,12 @@ namespace CinemaApp.Data.Models
         [Comment("Shows if cinema is deleted")]
         public bool IsDeleted { get; set; }
 
-        public List<CinemaMovie> CinemaMoives { get; set; } =
+        // ICollection<T> is used for higher abstraction
+        public ICollection<CinemaMovie> CinemaMoives { get; set; } =
             new List<CinemaMovie>();
 
-        public List<Ticket> Tickets { get; set; }
-            = new List<Ticket>();
+        public ICollection<Ticket> Tickets { get; set; }
+            = new HashSet<Ticket>();
 
 
     }
