@@ -8,7 +8,7 @@ namespace CinemaApp.Data.Models
     [Comment("Tickets in the system")]
     public class Ticket
     {
-        [Key]
+        
         [Comment("ticket identifier")]
         public Guid Id { get; set; }
 

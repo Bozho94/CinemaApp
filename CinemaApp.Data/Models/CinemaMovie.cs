@@ -7,7 +7,7 @@ namespace CinemaApp.Data.Models
     [Comment("Movies in a cinema with available tickets and scedule")]
     public class CinemaMovie
     {
-        [Key]
+      
         public Guid Id { get; set; }
 
 

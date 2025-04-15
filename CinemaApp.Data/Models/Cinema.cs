@@ -12,7 +12,7 @@ namespace CinemaApp.Data.Models
     [Comment("Cinemas in the system")]
     public class Cinema
     {
-        [Key]
+        
         [Comment("Cinema identifier")]
         public Guid Id { get; set; }
 

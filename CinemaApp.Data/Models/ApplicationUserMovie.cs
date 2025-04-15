@@ -16,6 +16,6 @@ namespace CinemaApp.Data.Models
         public Movie Movie { get; set; } = null!;
 
         [Comment("Shows if movie from user watchlist is detleted")]
-        bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; } 
     }
 }

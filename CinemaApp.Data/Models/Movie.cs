@@ -7,7 +7,7 @@ namespace CinemaApp.Data.Models
     [Comment("Movie in the system")]
     public class Movie
     {
-        [Key]
+        
         [Comment("Movie indetifier")]
         public Guid Id { get; set; }
 
