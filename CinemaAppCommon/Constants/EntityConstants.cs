@@ -72,5 +72,3 @@ namespace CinemaAppCommon.Constants
     }
 }
 
-    }
-}
