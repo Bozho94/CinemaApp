@@ -47,6 +47,7 @@ namespace CinemaApp.Data.Configuration
                 .HasForeignKey(t => t.ApplicationUserId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+
         }
     }
 }

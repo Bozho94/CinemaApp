@@ -33,9 +33,7 @@ namespace CinemaApp.Data.Models
         public ICollection<CinemaMovie> CinemaMoives { get; set; } =
             new List<CinemaMovie>();
 
-        public ICollection<Ticket> Tickets { get; set; }
-            = new HashSet<Ticket>();
-
+   
 
     }
 }

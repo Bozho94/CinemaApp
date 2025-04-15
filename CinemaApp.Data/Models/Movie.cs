@@ -57,9 +57,7 @@ namespace CinemaApp.Data.Models
         public ICollection<ApplicationUserMovie> MovieApplicationUsers { get; set; }
         = new HashSet<ApplicationUserMovie>();
 
-        public ICollection<Ticket> Tickets { get; set; }
-        = new HashSet<Ticket>();
-
+      
 
     } 
 }

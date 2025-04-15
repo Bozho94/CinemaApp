@@ -65,14 +65,14 @@ namespace CinemaApp.Data.Configuration
                 .HasForeignKey(cm => cm.CinemaId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            entity
-                .HasQueryFilter(c => c.IsDeleted == false);
-
 
             //Define uniqe index as a combination of the foreign keys to Cinema and Movie entities
             entity
                 .HasIndex(cm => new { cm.CinemaId, cm.MovieId })
                 .IsUnique();
+
+            entity
+                .HasQueryFilter(c => c.IsDeleted == false);
 
         }
     }
