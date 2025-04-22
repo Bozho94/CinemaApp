@@ -17,7 +17,7 @@ namespace CinemaApp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<CinemaAppDbContext>();
             builder.Services.AddControllersWithViews();
 
@@ -40,7 +40,9 @@ namespace CinemaApp
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication(); // Login with username and password 
+
+            app.UseAuthorization();// What I am allowed to do
 
             app.MapControllerRoute(
                 name: "default",
