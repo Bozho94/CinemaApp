@@ -8,7 +8,8 @@ namespace CinemaAppCommon.Constants
 {
     public static class EntityConstants
     {
-        public const string MoneyType = "money(18,2)";
+        // Decimal 18,2 is suitable sql server type for money
+        public const string MoneyType = "decimal(18,2)";
 
         public static class Cinema
         {
