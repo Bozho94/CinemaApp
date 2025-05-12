@@ -17,10 +17,23 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Files\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CinemaAppCommon\CinemaAppCommon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\cinemasMovies.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\movies.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\tickets.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

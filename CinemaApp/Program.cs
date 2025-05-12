@@ -1,13 +1,15 @@
 using CinemaApp.Data;
 using CinemaApp.Data.Models;
+using CinemaApp.Data.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace CinemaApp
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +60,16 @@ namespace CinemaApp
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var dbContext = services.GetRequiredService<CinemaAppDbContext>();
+
+                await DataProcessor.ImportMoviesFromJson(dbContext);
+                await DataProcessor.ImportCinemaMoviesFromJson(dbContext);
+              // await DataProcessor.ImportTicketsFromXml(dbContext);
+            }
 
             app.Run();
         }
